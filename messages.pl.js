@@ -34,6 +34,9 @@ window.MESSAGES.pl = {
   "about.card3.title": "Chęci do nauki",
   "about.card3.text":
     "Szukamy osób, które chcą się uczyć i rozwijać — także tych na początku drogi.",
+  "about.card4.title": "Elastyczny czas pracy",
+  "about.card4.text":
+    "Elastyczne godziny pracy — możesz dopasować je do swojego dnia.",
 
   "form.eyebrow": "Formularz",
   "form.title": "Zgłoś się do nas.",
