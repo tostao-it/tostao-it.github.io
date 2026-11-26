@@ -1,4 +1,4 @@
-// Formularz zgłoszenia: kontakt, hCaptcha i wysyłka AJAX do Web3Forms.
+// Formularz zgłoszenia: walidacja pól, kontakt, hCaptcha i wysyłka AJAX.
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formularz");
@@ -6,13 +6,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const submitBtn = form.querySelector('button[type="submit"]');
   const status = form.querySelector(".form__status");
+  const nameInput = form.querySelector("#name");
   const emailInput = form.querySelector("#email");
   const phoneInput = form.querySelector("#phone");
+  const messageInput = form.querySelector("#message");
   const contactInputs = [emailInput, phoneInput];
+  const allInputs = [nameInput, messageInput, ...contactInputs];
   const t = (key) => (window.i18n ? window.i18n.t(key) : key);
+
+  // E-mail: coś@domena.tld, bez spacji; domena ma część po kropce (min. 2 znaki).
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  // Telefon: opcjonalny "+", cyfry i typowe separatory (spacja, myślnik, kropka, nawiasy).
+  const PHONE_RE = /^\+?[\d\s().-]+$/;
 
   // null | "success" | "error" | "captcha" | "contact"
   let statusState = null;
+  let sending = false;
 
   function renderStatus() {
     status.textContent = "";
@@ -35,29 +44,68 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderSubmitLabel() {
-    if (!submitBtn.disabled) submitBtn.textContent = t("form.submit");
+    submitBtn.textContent = sending ? t("form.sending") : t("form.submit");
   }
 
-  // Wymagany jest e-mail albo telefon — przynajmniej jeden z nich.
-  function hasContact() {
-    return contactInputs.some((input) => input.value.trim() !== "");
+  function isEmailValid(raw) {
+    return EMAIL_RE.test(raw.trim());
   }
 
-  function markContact(valid) {
-    contactInputs.forEach((input) =>
-      input.classList.toggle("is-invalid", !valid)
+  function isPhoneValid(raw) {
+    const value = raw.trim();
+    if (!PHONE_RE.test(value)) return false;
+    const digits = value.replace(/\D/g, "").length;
+    return digits >= 7 && digits <= 15;
+  }
+
+  // Wymagany jest e-mail albo telefon; każde wypełnione pole musi być poprawne.
+  function contactValid() {
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    return (
+      (email !== "" || phone !== "") &&
+      (email === "" || isEmailValid(email)) &&
+      (phone === "" || isPhoneValid(phone))
     );
   }
 
-  // Błąd kontaktu znika, gdy użytkownik zaczyna uzupełniać pole.
-  contactInputs.forEach((input) => {
+  // Przycisk aktywny dopiero, gdy imię, wiadomość i poprawny kontakt są gotowe.
+  function formReady() {
+    return (
+      nameInput.value.trim().length >= 2 &&
+      messageInput.value.trim() !== "" &&
+      contactValid()
+    );
+  }
+
+  function markInvalid(input, invalid) {
+    input.classList.toggle("is-invalid", invalid);
+    if (invalid) input.setAttribute("aria-invalid", "true");
+    else input.removeAttribute("aria-invalid");
+  }
+
+  function updateSubmitState() {
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+
+    // Czerwona ramka dopiero, gdy w polu jest już jakaś — ale niepoprawna — wartość.
+    markInvalid(emailInput, email !== "" && !isEmailValid(email));
+    markInvalid(phoneInput, phone !== "" && !isPhoneValid(phone));
+
+    submitBtn.disabled = sending || !formReady();
+  }
+
+  allInputs.forEach((input) => {
     input.addEventListener("input", () => {
-      markContact(true);
       if (statusState === "contact") {
         statusState = null;
         renderStatus();
       }
+      updateSubmitState();
     });
+
+    // Autouzupełnianie przeglądarki nie zawsze wysyła zdarzenie "input".
+    input.addEventListener("change", updateSubmitState);
   });
 
   // hCaptcha podstawia token w ukrytym polu "h-captcha-response".
@@ -82,19 +130,23 @@ document.addEventListener("DOMContentLoaded", () => {
     renderStatus();
   });
 
+  window.addEventListener("pageshow", updateSubmitState);
+
   renderSubmitLabel();
+  updateSubmitState();
 
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    if (!hasContact()) {
-      markContact(false);
-      statusState = "contact";
-      renderStatus();
-      emailInput.focus();
+    if (!formReady()) {
+      updateSubmitState();
+      if (!contactValid()) {
+        statusState = "contact";
+        renderStatus();
+        emailInput.focus();
+      }
       return;
     }
-    markContact(true);
 
     if (!captchaSolved()) {
       statusState = "captcha";
@@ -102,10 +154,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = t("form.sending");
+    sending = true;
     statusState = null;
     renderStatus();
+    renderSubmitLabel();
+    updateSubmitState();
 
     try {
       const response = await fetch(form.action, {
@@ -120,15 +173,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       form.reset();
-      markContact(true);
       statusState = "success";
     } catch (error) {
       statusState = "error";
     } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = t("form.submit");
+      sending = false;
+      renderSubmitLabel();
       renderStatus();
       resetCaptcha();
+      updateSubmitState();
     }
   });
 });
