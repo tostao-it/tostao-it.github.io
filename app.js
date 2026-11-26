@@ -1,4 +1,4 @@
-// Formularz zgłoszenia: walidacja, hCaptcha i wysyłka AJAX do Web3Forms.
+// Formularz zgłoszenia: kontakt, hCaptcha i wysyłka AJAX do Web3Forms.
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formularz");
@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const submitBtn = form.querySelector('button[type="submit"]');
   const status = form.querySelector(".form__status");
+  const emailInput = form.querySelector("#email");
+  const phoneInput = form.querySelector("#phone");
+  const contactInputs = [emailInput, phoneInput];
   const t = (key) => (window.i18n ? window.i18n.t(key) : key);
 
-  // null | "success" | "error" | "captcha"
+  // null | "success" | "error" | "captcha" | "contact"
   let statusState = null;
 
   function renderStatus() {
@@ -22,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (statusState === "captcha") {
       status.dataset.state = "error";
       status.textContent = t("form.captcha");
+    } else if (statusState === "contact") {
+      status.dataset.state = "error";
+      status.textContent = t("form.contact");
     } else {
       status.dataset.state = "error";
       status.innerHTML = t("form.error");
@@ -31,6 +37,28 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderSubmitLabel() {
     if (!submitBtn.disabled) submitBtn.textContent = t("form.submit");
   }
+
+  // Wymagany jest e-mail albo telefon — przynajmniej jeden z nich.
+  function hasContact() {
+    return contactInputs.some((input) => input.value.trim() !== "");
+  }
+
+  function markContact(valid) {
+    contactInputs.forEach((input) =>
+      input.classList.toggle("is-invalid", !valid)
+    );
+  }
+
+  // Błąd kontaktu znika, gdy użytkownik zaczyna uzupełniać pole.
+  contactInputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      markContact(true);
+      if (statusState === "contact") {
+        statusState = null;
+        renderStatus();
+      }
+    });
+  });
 
   // hCaptcha podstawia token w ukrytym polu "h-captcha-response".
   function captchaSolved() {
@@ -59,6 +87,15 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    if (!hasContact()) {
+      markContact(false);
+      statusState = "contact";
+      renderStatus();
+      emailInput.focus();
+      return;
+    }
+    markContact(true);
+
     if (!captchaSolved()) {
       statusState = "captcha";
       renderStatus();
@@ -83,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       form.reset();
+      markContact(true);
       statusState = "success";
     } catch (error) {
       statusState = "error";

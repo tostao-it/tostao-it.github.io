@@ -203,13 +203,29 @@
                                    data-i18n-placeholder="form.name.ph">
                         </div>
 
-                        <div class="field">
-                            <label for="email" data-i18n="form.email">Adres e-mail</label>
-                            <input id="email" name="email" type="email" required
-                                   maxlength="120" autocomplete="email"
-                                   placeholder="np. anna@example.com"
-                                   data-i18n-placeholder="form.email.ph">
+                        <div class="form__row">
+                            <div class="field">
+                                <label for="email" data-i18n="form.email">Adres e-mail</label>
+                                <input id="email" name="email" type="email"
+                                       maxlength="120" autocomplete="email"
+                                       aria-describedby="contact-hint"
+                                       placeholder="np. anna@example.com"
+                                       data-i18n-placeholder="form.email.ph">
+                            </div>
+
+                            <div class="field">
+                                <label for="phone" data-i18n="form.phone">Numer telefonu</label>
+                                <input id="phone" name="phone" type="tel"
+                                       maxlength="30" autocomplete="tel"
+                                       aria-describedby="contact-hint"
+                                       placeholder="np. +48 600 000 000"
+                                       data-i18n-placeholder="form.phone.ph">
+                            </div>
                         </div>
+
+                        <p class="form__hint" id="contact-hint" data-i18n="form.contactHint">
+                            Wystarczy jeden kontakt — e-mail albo numer telefonu.
+                        </p>
 
                         <div class="field">
                             <label for="message" data-i18n="form.message">Wiadomość</label>

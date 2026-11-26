@@ -51,6 +51,8 @@ window.MESSAGES.en = {
   "form.name.ph": "e.g. Anna Kowalska",
   "form.email": "Email address",
   "form.email.ph": "e.g. anna@example.com",
+  "form.phone": "Phone number",
+  "form.phone.ph": "e.g. +48 600 000 000",
   "form.message": "Message",
   "form.message.ph":
     "Tell us a few things about yourself — experience, English level, when you can start.",
@@ -59,6 +61,8 @@ window.MESSAGES.en = {
   "form.success": "Thank you! Your application has been sent.",
   "form.error":
     'We couldn\'t send your application. Please try again in a moment or email <a href="mailto:tostaoit@protonmail.com">tostaoit@protonmail.com</a>.',
+  "form.contact": "Please provide an email address or a phone number.",
+  "form.contactHint": "One contact is enough — email or phone number.",
   "form.captcha": "Please confirm that you're not a robot.",
   "form.note": "By submitting the form, you agree to be contacted about recruitment.",
 

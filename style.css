@@ -409,6 +409,12 @@ h2 {
 
 .form { display: grid; gap: 1.15rem; }
 
+.form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
 .field { display: grid; gap: 0.45rem; }
 
 .field label {
@@ -444,6 +450,16 @@ h2 {
     box-shadow: 0 0 0 4px rgba(31, 92, 74, 0.13);
 }
 
+.field input.is-invalid {
+    border-color: #B23A2E;
+    background: #FDF6F5;
+}
+
+.field input.is-invalid:focus {
+    border-color: #B23A2E;
+    box-shadow: 0 0 0 4px rgba(178, 58, 46, 0.13);
+}
+
 .form .btn {
     width: 100%;
     margin-top: 0.35rem;
@@ -463,6 +479,12 @@ h2 {
 .form__status[data-state="error"] {
     color: #B23A2E;
     font-weight: 600;
+}
+
+.form__hint {
+    margin: -0.55rem 0 0;
+    color: var(--muted);
+    font-size: 0.82rem;
 }
 
 .form__note {
@@ -518,6 +540,7 @@ h2 {
 @media (max-width: 600px) {
     .nav { gap: 0.6rem; }
     .nav a:not(.btn) { display: none; }
+    .form__row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

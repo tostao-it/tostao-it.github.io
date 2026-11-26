@@ -51,6 +51,8 @@ window.MESSAGES.pl = {
   "form.name.ph": "np. Anna Kowalska",
   "form.email": "Adres e-mail",
   "form.email.ph": "np. anna@example.com",
+  "form.phone": "Numer telefonu",
+  "form.phone.ph": "np. +48 600 000 000",
   "form.message": "Wiadomość",
   "form.message.ph":
     "Napisz kilka słów o sobie — doświadczenie, znajomość angielskiego, kiedy możesz zacząć.",
@@ -59,6 +61,8 @@ window.MESSAGES.pl = {
   "form.success": "Dziękujemy! Zgłoszenie zostało wysłane.",
   "form.error":
     'Nie udało się wysłać zgłoszenia. Spróbuj ponownie za chwilę albo napisz na <a href="mailto:tostaoit@protonmail.com">tostaoit@protonmail.com</a>.',
+  "form.contact": "Podaj adres e-mail albo numer telefonu.",
+  "form.contactHint": "Wystarczy jeden kontakt — e-mail albo numer telefonu.",
   "form.captcha": "Potwierdź, że nie jesteś robotem.",
   "form.note": "Wysyłając formularz, zgadzasz się na kontakt w sprawie rekrutacji.",
 
