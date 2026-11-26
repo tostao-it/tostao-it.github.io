@@ -34,6 +34,9 @@ window.MESSAGES.en = {
   "about.card3.title": "Eagerness to learn",
   "about.card3.text":
     "We're looking for people who want to learn and grow — including those just starting out.",
+  "about.card4.title": "Flexible hours",
+  "about.card4.text":
+    "Flexible working hours — you can fit them around your day.",
 
   "form.eyebrow": "Form",
   "form.title": "Get in touch.",
