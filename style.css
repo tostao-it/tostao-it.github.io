@@ -596,10 +596,14 @@ h2 {
 }
 
 /* ===== hCaptcha ===== */
+/* Widget pokazuje się dopiero, gdy wymagane pola są wypełnione. */
 .form .h-captcha {
+    display: none;
     min-height: 78px;
     margin-top: 0.25rem;
 }
+
+.form .h-captcha.is-active { display: block; }
 
 /* Pułapka na boty — niewidoczna dla ludzi, wypełniana przez roboty. */
 .honeypot {

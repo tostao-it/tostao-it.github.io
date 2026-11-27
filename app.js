@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const phoneInput = form.querySelector("#phone");
   const messageInput = form.querySelector("#message");
   const adultInput = form.querySelector("#adult");
+  const captchaWrap = form.querySelector(".h-captcha");
   const contactInputs = [emailInput, phoneInput];
   const allInputs = [nameInput, messageInput, ...contactInputs, adultInput];
   const t = (key) => (window.i18n ? window.i18n.t(key) : key);
@@ -98,7 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
     markInvalid(emailInput, email !== "" && !isEmailValid(email));
     markInvalid(phoneInput, phone !== "" && !isPhoneValid(phone));
 
-    submitBtn.disabled = sending || !formReady();
+    const ready = formReady();
+
+    // Captcha pojawia się dopiero po wypełnieniu wymaganych pól.
+    if (captchaWrap) captchaWrap.classList.toggle("is-active", ready);
+
+    submitBtn.disabled = sending || !ready;
   }
 
   allInputs.forEach((input) => {
