@@ -26,7 +26,7 @@ window.MESSAGES.de = {
   "about.eyebrow": "Über uns",
   "about.title": "Wir suchen Menschen für die Arbeit in Radomsko.",
   "about.text":
-    "Wir planen, eine Niederlassung in Radomsko zu eröffnen, deshalb suchen wir motivierte, lernbereite Menschen (Volljährige) für die Arbeit. <strong>Wir suchen Menschen mit Englischkenntnissen oder der Bereitschaft zu lernen</strong>. Die Arbeit ist Büroarbeit am Computer.",
+    "Wir planen, eine Niederlassung in Radomsko zu eröffnen, deshalb suchen wir motivierte, lernbereite Menschen (Volljährige) für die Arbeit. <strong>Wir suchen Menschen mit Englischkenntnissen oder der Bereitschaft zu lernen</strong>. Büroarbeit am Computer.",
   "about.card1.title": "Englisch",
   "about.card1.text":
     "Wir suchen Menschen mit Englischkenntnissen oder der Bereitschaft zu lernen — auch wenn du gerade erst anfängst.",

@@ -26,7 +26,7 @@ window.MESSAGES.pl = {
   "about.eyebrow": "O nas",
   "about.title": "Szukamy ludzi do pracy w Radomsku.",
   "about.text":
-    "Planujemy otworzyć oddział w Radomsku, dlatego szukamy chętnych, uczących się ludzi (pełnoletnich) do pracy. <strong>Szukamy ludzi ze znajomością języka angielskiego lub chęciami do nauki</strong>. To praca biurowa, przed komputerem.",
+    "Planujemy otworzyć oddział w Radomsku, dlatego szukamy chętnych, uczących się ludzi (pełnoletnich) do pracy. <strong>Szukamy ludzi ze znajomością języka angielskiego lub chęciami do nauki</strong>. Praca biurowa, przed komputerem.",
   "about.card1.title": "Język angielski",
   "about.card1.text":
     "Szukamy osób ze znajomością angielskiego lub chęciami do nauki — także jeśli dopiero zaczynasz.",

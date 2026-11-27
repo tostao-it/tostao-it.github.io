@@ -26,7 +26,7 @@ window.MESSAGES.en = {
   "about.eyebrow": "About us",
   "about.title": "We're looking for people to work in Radomsko.",
   "about.text":
-    "We're planning to open a branch in Radomsko, so we're looking for willing, eager-to-learn people (18+) to work with us. <strong>We're looking for people with English skills or the willingness to learn</strong>. The job is office work, at a computer.",
+    "We're planning to open a branch in Radomsko, so we're looking for willing, eager-to-learn people (18+) to work with us. <strong>We're looking for people with English skills or the willingness to learn</strong>. Office work, at a computer.",
   "about.card1.title": "English",
   "about.card1.text":
     "We're looking for people with English skills or the willingness to learn — including those just starting out.",
