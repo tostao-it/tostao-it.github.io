@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tostao IT otwiera oddział w Radomsku. Szukamy uczących się osób do pracy biurowej. Wyślij zgłoszenie przez formularz.">
+    <meta name="description" content="Tostao IT planuje otworzyć oddział w Radomsku. Szukamy uczących się osób do pracy biurowej. Wyślij zgłoszenie przez formularz.">
     <meta name="theme-color" content="#F4F1EA">
     <title>Tostao IT — oddział w Radomsku</title>
     <link rel="stylesheet" href="style.css">
@@ -17,6 +17,7 @@
 
             <nav class="nav" aria-label="Nawigacja główna" data-i18n-aria-label="nav.label">
                 <a href="#o-nas" data-i18n="nav.about">O nas</a>
+                <a href="#oferta" data-i18n="nav.offers">Oferta</a>
                 <a class="btn btn--primary" href="#zgloszenie" data-i18n="nav.cta">Zgłoś się</a>
                 <tostao-lang-switch></tostao-lang-switch>
             </nav>
@@ -29,11 +30,12 @@
             <div class="container hero__inner">
                 <span class="chip" data-i18n="hero.chip">Tostao IT · Rekrutacja</span>
 
-                <h1 data-i18n-html="hero.title">Otwieramy <em>nowy oddział</em> w Radomsku.</h1>
+                <h1 data-i18n-html="hero.title">Planujemy otworzyć <em>nowy oddział</em> w Radomsku.</h1>
 
                 <p class="lead" data-i18n="hero.lead">
-                    Planujemy otworzyć oddział w Radomsku i szukamy chętnych, uczących się ludzi do pracy.
-                    Wymagamy znajomości języka angielskiego — a jeśli dopiero zaczynasz, liczą się chęci do nauki.
+                    Szukamy chętnych, uczących się ludzi (pełnoletnich) do pracy w nowym oddziale w Radomsku.
+                    Ludzi ze znajomością języka angielskiego lub chęciami do nauki.
+                    Znajomość kolejnych języków to dodatkowy atut.
                 </p>
 
                 <div class="hero__actions">
@@ -60,8 +62,8 @@
                 <div class="about__grid">
                     <p class="about__text" data-i18n-html="about.text">
                         Planujemy otworzyć oddział w Radomsku, dlatego szukamy chętnych, uczących się
-                        ludzi do pracy. <strong>Wymagamy znajomości języka angielskiego</strong>,
-                        ewentualnie chęci do nauki. To praca biurowa, przed komputerem.
+                        ludzi (pełnoletnich) do pracy. <strong>Szukamy ludzi ze znajomością języka
+                        angielskiego lub chęciami do nauki</strong>. To praca biurowa, przed komputerem.
                     </p>
 
                     <div class="cards">
@@ -78,8 +80,8 @@
                             <div>
                                 <h3 data-i18n="about.card1.title">Język angielski</h3>
                                 <p data-i18n="about.card1.text">
-                                    Znajomość angielskiego jest wymagana. Jeśli wciąż się uczysz,
-                                    liczą się przede wszystkim chęci.
+                                    Szukamy osób ze znajomością angielskiego lub chęciami do nauki
+                                    — także jeśli dopiero zaczynasz.
                                 </p>
                             </div>
                         </article>
@@ -118,23 +120,77 @@
                             </div>
                         </article>
 
-                        <article class="card">
-                            <span class="card__icon" aria-hidden="true">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                                     stroke="currentColor" stroke-width="1.6"
-                                     stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="9"/>
-                                    <path d="M12 7v5l3 2"/>
-                                </svg>
-                            </span>
-                            <div>
-                                <h3 data-i18n="about.card4.title">Elastyczny czas pracy</h3>
-                                <p data-i18n="about.card4.text">
-                                    Elastyczne godziny pracy — możesz dopasować je do swojego dnia.
-                                </p>
-                            </div>
-                        </article>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Oferujemy ===== -->
+        <section class="section offers" id="oferta">
+            <div class="container">
+                <div class="offers__panel">
+                    <header class="offers__head">
+                        <p class="eyebrow" data-i18n="offers.eyebrow">Oferujemy</p>
+                        <h2 data-i18n="offers.title">Co zyskujesz, dołączając do nas.</h2>
+                    </header>
+
+                    <ul class="offers__list">
+                        <li class="offers__item">
+                            <div class="offers__top">
+                                <span class="offers__icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="1.6"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 4 2 9l10 5 10-5-10-5z"/>
+                                        <path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/>
+                                    </svg>
+                                </span>
+                                <span class="offers__num" aria-hidden="true">01</span>
+                            </div>
+                            <h3 data-i18n="offers.card1.title">Pełne szkolenie</h3>
+                            <p data-i18n="offers.card1.text">
+                                Zapewniamy pełne szkolenie od podstaw — doświadczenie nie jest wymagane.
+                            </p>
+                        </li>
+
+                        <li class="offers__item">
+                            <div class="offers__top">
+                                <span class="offers__icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="1.6"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="9" cy="8" r="3.2"/>
+                                        <path d="M3 19v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1"/>
+                                        <path d="M16.5 5.2a3.2 3.2 0 0 1 0 5.6"/>
+                                        <path d="M18 13.4a5 5 0 0 1 3 4.6v1"/>
+                                    </svg>
+                                </span>
+                                <span class="offers__num" aria-hidden="true">02</span>
+                            </div>
+                            <h3 data-i18n="offers.card2.title">Wsparcie zespołu</h3>
+                            <p data-i18n="offers.card2.text">
+                                Wsparcie zespołu od pierwszego dnia — nie zostajesz sam z zadaniem.
+                            </p>
+                        </li>
+
+                        <li class="offers__item">
+                            <div class="offers__top">
+                                <span class="offers__icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                         stroke="currentColor" stroke-width="1.6"
+                                         stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="9"/>
+                                        <path d="M12 7v5l3 2"/>
+                                    </svg>
+                                </span>
+                                <span class="offers__num" aria-hidden="true">03</span>
+                            </div>
+                            <h3 data-i18n="offers.card3.title">Elastyczne godziny pracy</h3>
+                            <p data-i18n="offers.card3.text">
+                                Elastyczne godziny pracy — możesz dopasować je do swojego dnia.
+                            </p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -158,7 +214,7 @@
                                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M5 12l5 5L19 7"/>
                             </svg>
-                            <span data-i18n-html="form.list1"><strong>Imię i nazwisko</strong> — jak możemy się do Ciebie zwracać.</span>
+                            <span data-i18n-html="form.list1"><strong>Imię i nazwisko</strong></span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -166,7 +222,7 @@
                                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M5 12l5 5L19 7"/>
                             </svg>
-                            <span data-i18n-html="form.list2"><strong>Adres e-mail</strong> — tutaj odpowiemy.</span>
+                            <span data-i18n-html="form.list2"><strong>Adres e-mail lub/i telefon</strong> — tak się skontaktujemy.</span>
                         </li>
                         <li>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -234,6 +290,11 @@
                                       data-i18n-placeholder="form.message.ph"></textarea>
                         </div>
 
+                        <label class="checkbox">
+                            <input id="adult" name="adult" type="checkbox" value="yes" required>
+                            <span data-i18n="form.adult">Potwierdzam, że mam ukończone 18 lat.</span>
+                        </label>
+
                         <!-- hCaptcha (Web3Forms, zero konfiguracji) -->
                         <div class="h-captcha" data-captcha="true"></div>
 
@@ -264,6 +325,7 @@
     <script src="messages.pl.js"></script>
     <script src="messages.en.js"></script>
     <script src="messages.uk.js"></script>
+    <script src="messages.de.js"></script>
     <script src="i18n.js"></script>
     <script src="components.js"></script>
     <script src="app.js"></script>

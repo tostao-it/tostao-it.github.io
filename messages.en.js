@@ -10,12 +10,13 @@ window.MESSAGES.en = {
   "switch.aria": "Language",
   "nav.label": "Main navigation",
   "nav.about": "About us",
+  "nav.offers": "Offer",
   "nav.cta": "Apply",
 
   "hero.chip": "Tostao IT · Hiring",
-  "hero.title": "We're opening <em>a new branch</em> in Radomsko.",
+  "hero.title": "We're planning to open <em>a new branch</em> in Radomsko.",
   "hero.lead":
-    "We're planning to open a branch in Radomsko and are looking for willing, eager-to-learn people to join the team. A good command of English is required — and if you're just starting out, the willingness to learn is what counts.",
+    "We're looking for willing, eager-to-learn people (18+) to join our new branch in Radomsko. People with English skills or the willingness to learn. Knowing additional languages is a plus.",
   "hero.cta1": "Send your application",
   "hero.cta2": "Learn more",
   "hero.fact1": "Radomsko",
@@ -25,25 +26,33 @@ window.MESSAGES.en = {
   "about.eyebrow": "About us",
   "about.title": "We're looking for people to work in Radomsko.",
   "about.text":
-    "We're planning to open a branch in Radomsko, so we're looking for willing, eager-to-learn people to work with us. <strong>A good command of English is required</strong>, or at least the willingness to learn. The job is office work, at a computer.",
+    "We're planning to open a branch in Radomsko, so we're looking for willing, eager-to-learn people (18+) to work with us. <strong>We're looking for people with English skills or the willingness to learn</strong>. The job is office work, at a computer.",
   "about.card1.title": "English",
   "about.card1.text":
-    "English is required. If you're still learning, willingness is what matters most.",
+    "We're looking for people with English skills or the willingness to learn — including those just starting out.",
   "about.card2.title": "Office work",
   "about.card2.text": "Everyday office work, at a computer.",
   "about.card3.title": "Eagerness to learn",
   "about.card3.text":
     "We're looking for people who want to learn and grow — including those just starting out.",
-  "about.card4.title": "Flexible hours",
-  "about.card4.text":
+  "offers.eyebrow": "What we offer",
+  "offers.title": "What you gain by joining us.",
+  "offers.card1.title": "Full training",
+  "offers.card1.text":
+    "We provide full training from scratch — no experience required.",
+  "offers.card2.title": "Team support",
+  "offers.card2.text":
+    "Support from the team from day one — you're never left on your own with a task.",
+  "offers.card3.title": "Flexible hours",
+  "offers.card3.text":
     "Flexible working hours — you can fit them around your day.",
 
   "form.eyebrow": "Form",
   "form.title": "Get in touch.",
   "form.intro":
     "Leave your contact details and a few words about yourself. Tell us how you'd rate your English and why you'd like to work here.",
-  "form.list1": "<strong>Full name</strong> — what we should call you.",
-  "form.list2": "<strong>Email address</strong> — where we'll reply.",
+  "form.list1": "<strong>Full name</strong>",
+  "form.list2": "<strong>Email and/or phone</strong> — that's how we'll get in touch.",
   "form.list3": "<strong>Message</strong> — a few sentences about you.",
   "form.mail":
     'Prefer email? Write to <a href="mailto:tostaoit@protonmail.com?subject=Zg%C5%82oszenie%20%E2%80%94%20oddzia%C5%82%20Radomsko">tostaoit@protonmail.com</a>.',
@@ -64,6 +73,8 @@ window.MESSAGES.en = {
   "form.contact": "Please provide an email address or a phone number.",
   "form.contactHint": "One contact is enough — email or phone number.",
   "form.captcha": "Please confirm that you're not a robot.",
+  "form.adult": "I confirm that I am 18 or older.",
+  "form.adultRequired": "Please confirm that you are 18 or older.",
   "form.note": "By submitting the form, you agree to be contacted about recruitment.",
 
   "footer.copyright": "© 2026 Tostao IT",

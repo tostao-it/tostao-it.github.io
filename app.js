@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailInput = form.querySelector("#email");
   const phoneInput = form.querySelector("#phone");
   const messageInput = form.querySelector("#message");
+  const adultInput = form.querySelector("#adult");
   const contactInputs = [emailInput, phoneInput];
-  const allInputs = [nameInput, messageInput, ...contactInputs];
+  const allInputs = [nameInput, messageInput, ...contactInputs, adultInput];
   const t = (key) => (window.i18n ? window.i18n.t(key) : key);
 
   // E-mail: coś@domena.tld, bez spacji; domena ma część po kropce (min. 2 znaki).
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Telefon: opcjonalny "+", cyfry i typowe separatory (spacja, myślnik, kropka, nawiasy).
   const PHONE_RE = /^\+?[\d\s().-]+$/;
 
-  // null | "success" | "error" | "captcha" | "contact"
+  // null | "success" | "error" | "captcha" | "contact" | "age"
   let statusState = null;
   let sending = false;
 
@@ -37,6 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (statusState === "contact") {
       status.dataset.state = "error";
       status.textContent = t("form.contact");
+    } else if (statusState === "age") {
+      status.dataset.state = "error";
+      status.textContent = t("form.adultRequired");
     } else {
       status.dataset.state = "error";
       status.innerHTML = t("form.error");
@@ -69,12 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  // Przycisk aktywny dopiero, gdy imię, wiadomość i poprawny kontakt są gotowe.
+  // Przycisk aktywny dopiero, gdy imię, wiadomość, poprawny kontakt
+  // i potwierdzenie pełnoletności są gotowe.
   function formReady() {
     return (
       nameInput.value.trim().length >= 2 &&
       messageInput.value.trim() !== "" &&
-      contactValid()
+      contactValid() &&
+      adultInput.checked
     );
   }
 
@@ -97,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   allInputs.forEach((input) => {
     input.addEventListener("input", () => {
-      if (statusState === "contact") {
+      if (statusState === "contact" || statusState === "age") {
         statusState = null;
         renderStatus();
       }
@@ -144,6 +150,10 @@ document.addEventListener("DOMContentLoaded", () => {
         statusState = "contact";
         renderStatus();
         emailInput.focus();
+      } else if (!adultInput.checked) {
+        statusState = "age";
+        renderStatus();
+        adultInput.focus();
       }
       return;
     }

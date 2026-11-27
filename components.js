@@ -1,6 +1,6 @@
 // Komponenty webowe strony Tostao IT — bez frameworka, tylko Custom Elements.
 //
-//   <tostao-lang-switch>   przełącznik PL / EN / UA
+//   <tostao-lang-switch>   przełącznik PL / EN / UA / DE
 //
 // Komponent trzyma markup i style w shadow root i reaguje na zdarzenie
 // "languagechange" wysyłane przez i18n.js.
@@ -13,6 +13,7 @@
     { code: "pl", label: "PL" },
     { code: "en", label: "EN" },
     { code: "uk", label: "UA" },
+    { code: "de", label: "DE" },
   ];
 
   class TostaoLangSwitch extends HTMLElement {

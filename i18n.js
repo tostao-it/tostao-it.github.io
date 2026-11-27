@@ -1,5 +1,5 @@
 // Obsługa języka na stronie Tostao IT.
-// Słowniki mieszkają w messages.pl.js / messages.en.js / messages.uk.js.
+// Słowniki mieszkają w messages.pl.js / messages.en.js / messages.uk.js / messages.de.js.
 //
 // Haczyki w HTML:
 //   data-i18n             → textContent
@@ -10,7 +10,7 @@
 
 const translations = window.MESSAGES || {};
 
-const SUPPORTED = ["pl", "en", "uk"];
+const SUPPORTED = ["pl", "en", "uk", "de"];
 const DEFAULT_LANG = "pl";
 const STORAGE_KEY = "tostao-lang";
 

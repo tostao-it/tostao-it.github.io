@@ -10,12 +10,13 @@ window.MESSAGES.pl = {
   "switch.aria": "Język",
   "nav.label": "Nawigacja główna",
   "nav.about": "O nas",
+  "nav.offers": "Oferta",
   "nav.cta": "Zgłoś się",
 
   "hero.chip": "Tostao IT · Rekrutacja",
-  "hero.title": "Otwieramy <em>nowy oddział</em> w Radomsku.",
+  "hero.title": "Planujemy otworzyć <em>nowy oddział</em> w Radomsku.",
   "hero.lead":
-    "Planujemy otworzyć oddział w Radomsku i szukamy chętnych, uczących się ludzi do pracy. Wymagamy znajomości języka angielskiego — a jeśli dopiero zaczynasz, liczą się chęci do nauki.",
+    "Szukamy chętnych, uczących się ludzi (pełnoletnich) do pracy w nowym oddziale w Radomsku. Ludzi ze znajomością języka angielskiego lub chęciami do nauki. Znajomość kolejnych języków to dodatkowy atut.",
   "hero.cta1": "Wyślij zgłoszenie",
   "hero.cta2": "Poznaj szczegóły",
   "hero.fact1": "Radomsko",
@@ -25,25 +26,33 @@ window.MESSAGES.pl = {
   "about.eyebrow": "O nas",
   "about.title": "Szukamy ludzi do pracy w Radomsku.",
   "about.text":
-    "Planujemy otworzyć oddział w Radomsku, dlatego szukamy chętnych, uczących się ludzi do pracy. <strong>Wymagamy znajomości języka angielskiego</strong>, ewentualnie chęci do nauki. To praca biurowa, przed komputerem.",
+    "Planujemy otworzyć oddział w Radomsku, dlatego szukamy chętnych, uczących się ludzi (pełnoletnich) do pracy. <strong>Szukamy ludzi ze znajomością języka angielskiego lub chęciami do nauki</strong>. To praca biurowa, przed komputerem.",
   "about.card1.title": "Język angielski",
   "about.card1.text":
-    "Znajomość angielskiego jest wymagana. Jeśli wciąż się uczysz, liczą się przede wszystkim chęci.",
+    "Szukamy osób ze znajomością angielskiego lub chęciami do nauki — także jeśli dopiero zaczynasz.",
   "about.card2.title": "Praca biurowa",
   "about.card2.text": "Codzienna praca w biurze, przed komputerem.",
   "about.card3.title": "Chęci do nauki",
   "about.card3.text":
     "Szukamy osób, które chcą się uczyć i rozwijać — także tych na początku drogi.",
-  "about.card4.title": "Elastyczny czas pracy",
-  "about.card4.text":
+  "offers.eyebrow": "Oferujemy",
+  "offers.title": "Co zyskujesz, dołączając do nas.",
+  "offers.card1.title": "Pełne szkolenie",
+  "offers.card1.text":
+    "Zapewniamy pełne szkolenie od podstaw — doświadczenie nie jest wymagane.",
+  "offers.card2.title": "Wsparcie zespołu",
+  "offers.card2.text":
+    "Wsparcie zespołu od pierwszego dnia — nie zostajesz sam z zadaniem.",
+  "offers.card3.title": "Elastyczne godziny pracy",
+  "offers.card3.text":
     "Elastyczne godziny pracy — możesz dopasować je do swojego dnia.",
 
   "form.eyebrow": "Formularz",
   "form.title": "Zgłoś się do nas.",
   "form.intro":
     "Zostaw kontakt i kilka słów o sobie. Napisz, jak oceniasz swoją znajomość angielskiego i dlaczego chcesz pracować właśnie tutaj.",
-  "form.list1": "<strong>Imię i nazwisko</strong> — jak możemy się do Ciebie zwracać.",
-  "form.list2": "<strong>Adres e-mail</strong> — tutaj odpowiemy.",
+  "form.list1": "<strong>Imię i nazwisko</strong>",
+  "form.list2": "<strong>Adres e-mail lub/i telefon</strong> — tak się skontaktujemy.",
   "form.list3": "<strong>Wiadomość</strong> — kilka zdań o Tobie.",
   "form.mail":
     'Wolisz e-mail? Napisz na <a href="mailto:tostaoit@protonmail.com?subject=Zg%C5%82oszenie%20%E2%80%94%20oddzia%C5%82%20Radomsko">tostaoit@protonmail.com</a>.',
@@ -64,6 +73,8 @@ window.MESSAGES.pl = {
   "form.contact": "Podaj adres e-mail albo numer telefonu.",
   "form.contactHint": "Wystarczy jeden kontakt — e-mail albo numer telefonu.",
   "form.captcha": "Potwierdź, że nie jesteś robotem.",
+  "form.adult": "Potwierdzam, że mam ukończone 18 lat.",
+  "form.adultRequired": "Potwierdź, że masz ukończone 18 lat.",
   "form.note": "Wysyłając formularz, zgadzasz się na kontakt w sprawie rekrutacji.",
 
   "footer.copyright": "© 2026 Tostao IT",
